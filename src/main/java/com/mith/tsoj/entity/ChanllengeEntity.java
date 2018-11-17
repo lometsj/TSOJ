@@ -5,20 +5,31 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Chanllenge")
 public class ChanllengeEntity {
-    private enum Catetigory{
-        Pwn,Reverse,Crypto,Misc,Web;
-
-    }
 
     @Id
     @GeneratedValue
     private Long id;
     private String name;
     private String description;
-    @Enumerated(EnumType.STRING)
-    private Catetigory catetigory;
-    private String message;
+    private String catetigory;
+    private String filepath;
+    private int point;
 
+    public String getFilepath() {
+        return filepath;
+    }
+
+    public void setFilepath(String filepath) {
+        this.filepath = filepath;
+    }
+
+    public int getPoint() {
+        return point;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
 
     public String getDescription() {
         return description;
@@ -28,11 +39,11 @@ public class ChanllengeEntity {
         this.description = description;
     }
 
-    public Catetigory getCatetigory() {
+    public String getCatetigory() {
         return catetigory;
     }
 
-    public void setCatetigory(Catetigory catetigory) {
+    public void setCatetigory(String catetigory) {
         this.catetigory = catetigory;
     }
 
