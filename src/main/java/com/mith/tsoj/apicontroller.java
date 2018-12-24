@@ -47,7 +47,6 @@ public class apicontroller {
     }
 
     @RequestMapping(value = "/api/challenlist")
-    @CrossOrigin("http://127.0.0.1:8081")
     public List< ChallengeEntity > challenlist(){
         return challengeRepo.findAll();
     }
