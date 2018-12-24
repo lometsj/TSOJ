@@ -3,17 +3,26 @@ package com.mith.tsoj.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Chanllenge")
-public class ChanllengeEntity {
+@Table(name = "Challenge")
+public class ChallengeEntity {
 
     @Id
     @GeneratedValue
     private Long id;
     private String name;
     private String description;
-    private String catetigory;
+    private String category;
     private String filepath;
     private int point;
+    private String flag;
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
+    }
 
     public String getFilepath() {
         return filepath;
@@ -40,11 +49,11 @@ public class ChanllengeEntity {
     }
 
     public String getCatetigory() {
-        return catetigory;
+        return category;
     }
 
     public void setCatetigory(String catetigory) {
-        this.catetigory = catetigory;
+        this.category = catetigory;
     }
 
     public Long getId() {
